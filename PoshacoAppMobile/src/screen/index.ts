@@ -1,1 +1,3 @@
-export * from './Ha';
+import * as Main from './main';
+
+export { Main };
