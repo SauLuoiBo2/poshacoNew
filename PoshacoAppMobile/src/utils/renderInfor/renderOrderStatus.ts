@@ -89,4 +89,4 @@ class RenderOrderStatus {
     }
 }
 
-export const renderOrderStatus = new RenderOrderStatus();
+export { RenderOrderStatus };

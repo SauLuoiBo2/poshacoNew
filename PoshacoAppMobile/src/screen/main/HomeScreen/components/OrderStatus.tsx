@@ -4,14 +4,14 @@ import isEqual from 'react-fast-compare';
 import { Box, HStack, Text, VStack } from 'native-base';
 import * as Sui from '@src/components';
 import { Content, Styles } from '@src/assets';
-import { renderOrderStatus, themes } from '@src/utils';
+import { RenderOrderStatus, themes } from '@src/utils';
 import { vScale, scale } from '@src/lib';
 import moment from 'moment';
 import numeral from 'numeral';
 
 const ORDER_STATUS = {
     id: 'CT1908/1019',
-    status: renderOrderStatus.status.CANCELED.ID,
+    status: new RenderOrderStatus().status.CANCELED.ID,
     createAt: new Date(),
     price: '23000000',
     rate: 3.4,
@@ -28,6 +28,7 @@ const OrderStatusCom = ({ onPressOrder, orderStatus = ORDER_STATUS, style, onPre
     const onPress = (): void => {
         onPressOrder(orderStatus);
     };
+    const renderOrderStatus = new RenderOrderStatus();
     return (
         <Box style={[style, styles.content]}>
             <VStack>
