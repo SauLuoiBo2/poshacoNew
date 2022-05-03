@@ -3,10 +3,11 @@ import React from 'react';
 import { HStack, VStack, Text, Box } from 'native-base';
 import { Image } from '..';
 import { vScale, scale } from '@src/lib';
-import { themes } from '@src/utils';
+
 import numeral from 'numeral';
 import { ButtonCustom } from '../Button';
 import { Content } from '@src/assets';
+import { themes } from '@src/utils';
 
 type Props = {
     product: any;
