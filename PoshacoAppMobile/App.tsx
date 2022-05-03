@@ -2,8 +2,7 @@ import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { NativeBaseProvider, extendTheme, Text } from 'native-base';
-import { AppContainer } from '@src/navigation';
-import { Title } from '@src/components';
+import { AppContainer } from './src/navigation';
 
 const App = () => {
     return (

@@ -39,6 +39,16 @@ const HomeCom = () => {
                 <Sui.Image.ImageCommon onLoad={onLoadImage} source={images.header} style={styles.banner} placeholder>
                     <Co.Header onPressNotification={testFun} onPressAvatar={testFun} />
                 </Sui.Image.ImageCommon>
+                <Nb.Box px={4} w='full' bg={'white'}>
+                    <Nb.Box w='full' style={[styles.scroll, { marginTop: -(heightOver / 2) }]}>
+                        <Sui.Card.DebtCard />
+                        <Co.OrderStatus onPressOrder={testFun} />
+                        <Co.NewProductSection />
+                        {/* <Co.DebtCard />
+                        <Co.OrderStatus onPressOrder={test} />
+                        <Co.NewProductSection /> */}
+                    </Nb.Box>
+                </Nb.Box>
             </Nb.ScrollView>
         </Nb.Box>
     );
