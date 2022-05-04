@@ -4,6 +4,7 @@ import isEqual from 'react-fast-compare';
 import * as Sui from '@src/components';
 import { Box, HStack, Text, VStack } from 'native-base';
 import { Content, Styles } from '@src/assets';
+import { themes } from '@src/utils';
 
 const NewProductSectionCom = () => {
     const [products, setProducs] = React.useState<any>([]);

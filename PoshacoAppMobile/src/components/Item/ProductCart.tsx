@@ -69,7 +69,7 @@ const ProductCart = ({ product, navigation, style }: Props) => {
                         color: themes.colors.white,
                         fontSize: '12px',
                         fontWeight: 'bold',
-                        fontFamily: 'hBold',
+                        fontFamily: themes.fonts.hBold,
                     }}
                     // onPress={onPress}
                     w={`${scale(84)}`}
