@@ -51,6 +51,14 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) need to access your camera to capture a photo add and update profile picture</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string></string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>$(PRODUCT_NAME) uses the microphone to record your speech and upload rate service</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>$(PRODUCT_NAME) Need to access your photo library to select a photo add and update profile picture</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>iCielHelveticaNowDisplay-Bold.otf</string>
