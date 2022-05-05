@@ -6,15 +6,20 @@ import { Header } from '@src/components';
 import { useNavigation } from '@react-navigation/native';
 import { SCREENS } from '@src/navigation';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
-import IntroScreen from './IntroScreen';
+import { IntroScreen } from './IntroScreen';
 import PhoneScreen from './PhoneScreen';
-import OtpScreen from './OtpScreen';
+import { OtpScreen } from './OtpScreen';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+
+const Tab = createMaterialTopTabNavigator();
 
 const MainAuthCom = () => {
     const navigation: any = useNavigation();
+    const phone = React.useRef();
+
+    // state
     const [indexSwiper, setIndexSwiper] = React.useState<any>(0);
     const [loading, setLoading] = React.useState<boolean>(false);
-    const phone = React.useRef();
 
     const onNext = () => {
         if (indexSwiper >= 0 && indexSwiper < 2) {
@@ -37,6 +42,14 @@ const MainAuthCom = () => {
                 navigation={navigation}
                 onPressLeft={onBack}
             />
+            <ScrollableTabView locked page={indexSwiper} prerenderingSiblingsNumber={1} renderTabBar={() => <View />}>
+                {/* <Intro onPress={onNext} />
+                <Phone onPress={onNext} loading={loading} ref={phone} />
+                <CodeOTP onPress={onNext} loading={loading} ref={phone} /> */}
+                <IntroScreen onPress={onNext} />
+                <PhoneScreen onPress={onNext} loading={loading} />
+                <OtpScreen onPress={onNext} loading={loading} />
+            </ScrollableTabView>
         </Box>
     );
 };

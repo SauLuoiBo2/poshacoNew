@@ -25,7 +25,7 @@ const ProductHomeScreen = () => {
             <Nb.Box px='16px'>
                 <SearchBar />
             </Nb.Box>
-            <Tab.Navigator
+            {/* <Tab.Navigator
                 initialRouteName='1'
                 screenOptions={{
                     tabBarActiveTintColor: '#e91e63',
@@ -38,8 +38,8 @@ const ProductHomeScreen = () => {
                 <Tab.Screen name='3' component={ProductList} options={{ tabBarLabel: 'Tôn trần' }}></Tab.Screen>
                 <Tab.Screen name='4' component={ProductList} options={{ tabBarLabel: 'Xà gồ' }}></Tab.Screen>
                 <Tab.Screen name='5' component={ProductList} options={{ tabBarLabel: 'Phụ kiện' }}></Tab.Screen>
-            </Tab.Navigator>
-            {/* <ScrollableTabView
+            </Tab.Navigator> */}
+            <ScrollableTabView
                 style={styles.tabsContainer}
                 tabBarTextStyle={styles.tabBarTextStyle}
                 tabBarInactiveTextColor={colors.darkNeu}
@@ -52,7 +52,7 @@ const ProductHomeScreen = () => {
                 <ProductList tabLabel='Tôn trần' navigation={navigation} />
                 <ProductList tabLabel='Xà gồ' navigation={navigation} />
                 <ProductList tabLabel='Phụ kiện' navigation={navigation} />
-            </ScrollableTabView> */}
+            </ScrollableTabView>
         </Nb.Box>
     );
 };
