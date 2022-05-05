@@ -16,6 +16,7 @@ module.exports = {
                     '@queries': ['./src/queries'],
                     '@context': ['./src/context'],
                     '@hooks': ['./src/hooks'],
+                    '@model': ['./src/model'],
                 },
                 extensions: ['.ios.js', '.android.js', '.js', '.jsx', '.ts', '.json'],
             },

@@ -7,5 +7,7 @@ import * as Item from './Item';
 import * as Card from './Card';
 import * as Popup from './Popup/ubdex';
 import * as Header from './Header';
+import * as Input from './Input';
+import * as Progress from './Progress';
 
-export { Image, Icon, Button, Title, DisplayValue, Item, Card, Popup, Header };
+export { Image, Icon, Button, Title, DisplayValue, Item, Card, Popup, Header, Input, Progress };

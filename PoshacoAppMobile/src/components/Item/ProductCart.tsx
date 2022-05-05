@@ -8,6 +8,7 @@ import numeral from 'numeral';
 import { ButtonCustom } from '../Button';
 import { Content } from '@src/assets';
 import { themes } from '@src/utils';
+import { SCREENS } from '@src/navigation';
 
 type Props = {
     product: any;
@@ -16,6 +17,7 @@ type Props = {
 };
 
 const ProductCart = ({ product, navigation, style }: Props) => {
+    const onPress = () => navigation.navigate(SCREENS.PRODUCT_DETAIL_SCREEN, { id: product.id });
     return (
         <HStack
             style={styles.containerProduct}
@@ -71,7 +73,7 @@ const ProductCart = ({ product, navigation, style }: Props) => {
                         fontWeight: 'bold',
                         fontFamily: themes.fonts.hBold,
                     }}
-                    // onPress={onPress}
+                    onPress={onPress}
                     w={`${scale(84)}`}
                     h={`${vScale(32)}`}
                     alignSelf='flex-end'

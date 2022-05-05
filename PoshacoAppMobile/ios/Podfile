@@ -50,13 +50,8 @@ target 'PoshacoAppMobile' do
   #
   # Note that if you have use_frameworks! enabled, Flipper will not work and
   # you should disable the next line.
-<<<<<<< Updated upstream
-  # use_flipper!({ 'Flipper' => '0.144.0'})
-  use_flipper!
-=======
   use_flipper!({ 'Flipper' => '0.84.0' })
 
->>>>>>> Stashed changes
 
   post_install do |installer|
     flipper_post_install(installer)

@@ -7,6 +7,8 @@ import isEqual from 'react-fast-compare';
 import { testFun, vScale } from '@src/lib';
 import * as Co from './components';
 import { StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { SCREENS } from '@src/navigation';
 
 const HomeCom = () => {
     // state
@@ -14,6 +16,9 @@ const HomeCom = () => {
     const [barStyle, setBarStyle] = React.useState<any>('light-content');
     const [heightImg, setHeightImt] = React.useState(0);
     const [heightOver, setHeightOver] = React.useState(vScale(160));
+
+    // navigation
+    const navigation = useNavigation();
 
     // image
     const onLoadImage = (event: any) => setHeightImt(event.nativeEvent.height);
@@ -37,7 +42,10 @@ const HomeCom = () => {
             <Nb.StatusBar backgroundColor={bgColor} barStyle={barStyle} />
             <Nb.ScrollView>
                 <Sui.Image.ImageCommon onLoad={onLoadImage} source={images.header} style={styles.banner} placeholder>
-                    <Co.Header onPressNotification={testFun} onPressAvatar={testFun} />
+                    <Co.Header
+                        onPressNotification={() => navigation.navigate(SCREENS.NOTIFICATION_SCREEN)}
+                        onPressAvatar={() => navigation.navigate(SCREENS.PERSONAL_TAB)}
+                    />
                 </Sui.Image.ImageCommon>
                 <Nb.Box px={4} w='full' bg={'white'}>
                     <Nb.Box w='full' style={[styles.scroll, { marginTop: -(heightOver / 2) }]}>

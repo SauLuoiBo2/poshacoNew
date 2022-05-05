@@ -1,3 +1,4 @@
 import DisplayColor from './DisplayColor';
+import InforItem from './InforItem';
 
-export { DisplayColor };
+export { DisplayColor, InforItem };

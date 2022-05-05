@@ -6,6 +6,7 @@ import { Touchable } from '../Button';
 import { themes } from '@src/utils';
 import { IconMoon } from '../Icon';
 import { scale, vScale } from '@src/lib';
+import { Fonts } from '@src/utils/themes/Fonts';
 
 const HeaderBar = ({
     navigation,
@@ -46,7 +47,7 @@ const HeaderBar = ({
     const HeaderTitle = () => (
         <Box style={styles.center} pointerEvents='none'>
             {title && (
-                <Text fontSize='18px' fontFamily='hBold' fontWeight='bold' color={colors.dark}>
+                <Text fontSize='18px' fontFamily={Fonts.fonts.hBold} fontWeight='bold' color={colors.dark}>
                     {title}
                 </Text>
             )}

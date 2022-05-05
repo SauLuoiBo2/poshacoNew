@@ -4,6 +4,7 @@ import { Touchable } from '../Button';
 import { Content } from '@src/assets';
 import { capitalize } from 'lodash';
 import { ViewStyle } from 'react-native';
+import { themes } from '@src/utils';
 
 type Props = {
     style?: ViewStyle;
@@ -20,7 +21,7 @@ const CategoryTitle = ({ style, name, textMore, onPress, sizeText }: Props) => {
                 {name}
             </Text>
             <Touchable onPress={onPress}>
-                <Text color={'blue'} fontSize='16px' mt='2px'>
+                <Text color={themes.colors.blue} fontSize='16px' mt='2px'>
                     {capitalize(textMore)}
                 </Text>
             </Touchable>

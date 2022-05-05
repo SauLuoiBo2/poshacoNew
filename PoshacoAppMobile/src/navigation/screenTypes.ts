@@ -1,8 +1,8 @@
-type TypeScreens = {
-    [key: string]: string;
-};
+interface StringArray {
+    [index: string]: string;
+}
 
-export const SCREENS: any = {
+export const SCREENS = {
     //
     MAIN_STACK: 'MainStack',
     AUTH_STACK: 'AuthStack',
