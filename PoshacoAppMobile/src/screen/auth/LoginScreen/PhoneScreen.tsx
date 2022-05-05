@@ -1,21 +1,32 @@
 import { StyleSheet } from 'react-native';
 import React from 'react';
-import { Box, Center, Text } from 'native-base';
+import { Box, Center, Text, useToast } from 'native-base';
 import { Image, Input, Button } from '@src/components';
 import { images } from '@src/assets';
 import { scale, vScale } from '@src/lib';
 import { themes } from '@src/utils';
 import { useForm } from 'react-hook-form';
+import logger from '@src/utils/comcom/logger';
+import auth from '@react-native-firebase/auth';
+import isEqual from 'react-fast-compare';
 
 type Props = {
     onPress: () => void;
     loading: boolean;
 };
 
-const PhoneScreen = ({ onPress, loading }: Props, ref: any) => {
+const PhoneScreenCom = ({ onPress, loading }: Props, ref: any) => {
     const { colors, fonts } = themes;
 
+    // state
+
+    const [confirm, setConfirm] = React.useState<any>(null);
+
     // hook
+
+    const toast = useToast();
+
+    // form
     const {
         control,
         handleSubmit,
@@ -27,11 +38,39 @@ const PhoneScreen = ({ onPress, loading }: Props, ref: any) => {
         },
     });
 
+    // ref
+
+    React.useImperativeHandle(ref, () => ({
+        getPhone: () => getValues('phone'),
+        getConfirm: () => confirm,
+    }));
+
     // function
 
-    function onSubmit() {
-        onPress();
-    }
+    const onSubmit = async (data: any) => {
+        logger.debug('onSubmit', data);
+        if (data && onPress) {
+            try {
+                const firstCharacter = data?.phone.charAt(0);
+                let phoneNumber = '+84';
+                if (firstCharacter === '0') {
+                    const cutNumber = data?.phone.slice(1, 10);
+                    phoneNumber = phoneNumber.concat(cutNumber);
+                }
+                const confirmation = await auth().signInWithPhoneNumber(phoneNumber);
+                logger.debug('confirmation', confirmation);
+                if (confirmation) {
+                    setConfirm(confirmation);
+                    onPress();
+                }
+            } catch (error) {
+                logger.error('error', error);
+                toast.show({
+                    description: 'Không tìm thấy tài khoản. Xin thử lại',
+                });
+            }
+        }
+    };
 
     return (
         <Box>
@@ -82,7 +121,9 @@ const PhoneScreen = ({ onPress, loading }: Props, ref: any) => {
     );
 };
 
-export default PhoneScreen;
+export const PhoneScreen = React.memo(React.forwardRef(PhoneScreenCom), (prevProps, nextProps) =>
+    isEqual(prevProps, nextProps)
+);
 
 const styles = StyleSheet.create({
     logo: {

@@ -7,11 +7,8 @@ import { useNavigation } from '@react-navigation/native';
 import { SCREENS } from '@src/navigation';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 import { IntroScreen } from './IntroScreen';
-import PhoneScreen from './PhoneScreen';
+import { PhoneScreen } from './PhoneScreen';
 import { OtpScreen } from './OtpScreen';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-
-const Tab = createMaterialTopTabNavigator();
 
 const MainAuthCom = () => {
     const navigation: any = useNavigation();
@@ -47,7 +44,7 @@ const MainAuthCom = () => {
                 <Phone onPress={onNext} loading={loading} ref={phone} />
                 <CodeOTP onPress={onNext} loading={loading} ref={phone} /> */}
                 <IntroScreen onPress={onNext} />
-                <PhoneScreen onPress={onNext} loading={loading} />
+                <PhoneScreen onPress={onNext} loading={loading} ref={phone} />
                 <OtpScreen onPress={onNext} loading={loading} />
             </ScrollableTabView>
         </Box>

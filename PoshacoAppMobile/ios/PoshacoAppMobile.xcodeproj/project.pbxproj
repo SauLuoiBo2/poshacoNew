@@ -17,6 +17,7 @@
 		21491F381E884E00B65986B5 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FB00D86FB2143C8817310A7 /* Octicons.ttf */; };
 		2CBF3F0A0FF444F0B2C488CF /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 972F3944142947E68D65282F /* Foundation.ttf */; };
 		32B95B50CC1C4F43A79B59E9 /* SFProText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7C24672E6B84F0A91087C51 /* SFProText-Regular.ttf */; };
+		426FEE602823DA7B0098187E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 426FEE5F2823DA7B0098187E /* GoogleService-Info.plist */; };
 		4AB52A4B159241D69E0D5930 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8526523E3EA1435CB0EE93C9 /* MaterialIcons.ttf */; };
 		4C3BF7A917794B5796CB0FBD /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B7B476E20954E0AB2821AB5 /* FontAwesome5_Brands.ttf */; };
 		526B150E839B4BFCA46D9074 /* SFProText-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A9E8DB6DBCE4542BAD7D4B2 /* SFProText-Light.ttf */; };
@@ -67,6 +68,7 @@
 		34ADD170E77448CF9FE71F52 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		388A1FDD22D248FF8101C0B4 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-PoshacoAppMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoshacoAppMobile.debug.xcconfig"; path = "Target Support Files/Pods-PoshacoAppMobile/Pods-PoshacoAppMobile.debug.xcconfig"; sourceTree = "<group>"; };
+		426FEE5F2823DA7B0098187E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		498648D1349B4EDEA35F2515 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		4DED155B126D4685AC9629BB /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-PoshacoAppMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoshacoAppMobile.release.xcconfig"; path = "Target Support Files/Pods-PoshacoAppMobile/Pods-PoshacoAppMobile.release.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		13B07FAE1A68108700A75B9A /* PoshacoAppMobile */ = {
 			isa = PBXGroup;
 			children = (
+				426FEE5F2823DA7B0098187E /* GoogleService-Info.plist */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -334,6 +337,7 @@
 				526B150E839B4BFCA46D9074 /* SFProText-Light.ttf in Resources */,
 				32B95B50CC1C4F43A79B59E9 /* SFProText-Regular.ttf in Resources */,
 				A406FC9BA55D4216A2AB44FE /* AntDesign.ttf in Resources */,
+				426FEE602823DA7B0098187E /* GoogleService-Info.plist in Resources */,
 				61A13DA4BFD0409AB2108DBA /* Entypo.ttf in Resources */,
 				F01E58CAA5D54054978F6FB1 /* EvilIcons.ttf in Resources */,
 				535D6DA1DDD84553A381537C /* Feather.ttf in Resources */,

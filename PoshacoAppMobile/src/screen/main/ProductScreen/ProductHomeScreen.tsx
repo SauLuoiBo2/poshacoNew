@@ -9,9 +9,6 @@ import { CategoryTitle } from '@src/components/Title';
 import { ProductList } from './components';
 import { useNavigation } from '@react-navigation/native';
 import { SearchBar } from '@src/components/Input';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-
-const Tab = createMaterialTopTabNavigator();
 
 const ProductHomeScreen = () => {
     const { colors, fonts } = themes;
