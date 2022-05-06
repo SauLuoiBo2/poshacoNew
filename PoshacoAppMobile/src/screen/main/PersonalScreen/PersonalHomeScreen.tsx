@@ -7,6 +7,7 @@ import { useNavigation } from '@react-navigation/native';
 import * as Co from './components';
 import * as Sui from '@src/components';
 import { SCREENS } from '@src/navigation';
+import { useAuth } from '@src/queries/hooks';
 
 const PersonalHomeScreen = () => {
     const [bgColor, setBgColor] = useState(themes.colors.white);
@@ -15,6 +16,10 @@ const PersonalHomeScreen = () => {
     // funcition
 
     const onLogout = () => modal.current.show();
+
+    const logout = () => {
+        useAuth().logout();
+    };
 
     // hook
     const navigation = useNavigation();
@@ -46,7 +51,7 @@ const PersonalHomeScreen = () => {
                     typePopup='warn'
                     titlePopup='Đăng xuất'
                     description='Bạn có chắc chắn muốn đăng xuất khỏi hệ thống?'
-                    // onPressLeft={logout}
+                    onPressLeft={logout}
                     onPressRight={() => modal.current.hide()}
                 />
             </ScrollView>

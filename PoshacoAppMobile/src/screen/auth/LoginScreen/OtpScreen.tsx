@@ -14,7 +14,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import logger from '@src/utils/comcom/logger';
 import { scale, vScale } from '@src/lib';
 import { themes } from '@src/utils';
-import { Message } from 'react-native-gifted-chat';
+import { useGlobalState } from '@src/queries/hooks';
+import { authKey } from '@src/queries';
 
 type Props = {
     onPress?: () => void;
@@ -27,7 +28,7 @@ const CodeOTPComponent = ({ onPress, loading }: Props, ref: any) => {
 
     const phone = ref?.current?.getPhone();
     const navigation = useNavigation();
-
+    const [_, setIsLogin] = useGlobalState<boolean>(authKey.IS_LOGIN, false);
     // const [_, setIsLogin] = useGlobalState<boolean>(IS_LOGIN, false);
 
     const { control, handleSubmit } = useForm({
@@ -39,6 +40,7 @@ const CodeOTPComponent = ({ onPress, loading }: Props, ref: any) => {
     const onSubmit = async (data: any) => {
         const confirmCode = ref?.current?.getConfirm()._verificationId;
         const { otp } = data;
+
         try {
             if (confirmCode && data && phone) {
                 const credential = auth.PhoneAuthProvider.credential(confirmCode, otp);
@@ -52,8 +54,8 @@ const CodeOTPComponent = ({ onPress, loading }: Props, ref: any) => {
                         });
 
                         logger.info('token', firebaseToken);
-                        // setIsLogin(true);
-                        // navigation.navigate(SCREENS.MAIN_STACK);
+                        setIsLogin(true);
+                        navigation.navigate(SCREENS.MAIN_STACK);
                     }
                 }
             }

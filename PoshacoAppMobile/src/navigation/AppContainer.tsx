@@ -7,16 +7,22 @@ import { SCREENS } from './screenTypes';
 import { screenOptions } from '@src/utils';
 import MainStack from './main';
 import AuthStack from './auth';
+import { useAuth } from '@src/queries/hooks';
 
 const Root = createStackNavigator();
 
 const AppContainer = () => {
+    const { getAuth } = useAuth();
+    const { data } = getAuth();
     return (
         <NavigationContainer fallback={<Text>Loading ...</Text>}>
             <Root.Navigator screenOptions={screenOptions}>
-                {/* <Root.Screen name={SCREENS.MAIN_STACK} component={MainStack} /> */}
-
-                <Root.Screen name={SCREENS.AUTH_STACK} component={AuthStack} />
+                {data?.token ? (
+                    <Root.Screen name={SCREENS.MAIN_STACK} component={MainStack} />
+                ) : (
+                    <Root.Screen name={SCREENS.AUTH_STACK} component={AuthStack} />
+                )}
+                {/* <Root.Screen name={SCREENS.AUTH_STACK} component={AuthStack} /> */}
             </Root.Navigator>
         </NavigationContainer>
     );
