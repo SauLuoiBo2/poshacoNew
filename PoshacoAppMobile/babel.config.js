@@ -17,6 +17,7 @@ module.exports = {
                     '@context': ['./src/context'],
                     '@hooks': ['./src/hooks'],
                     '@model': ['./src/model'],
+                    '@api': ['./src/api'],
                 },
                 extensions: ['.ios.js', '.android.js', '.js', '.jsx', '.ts', '.json'],
             },

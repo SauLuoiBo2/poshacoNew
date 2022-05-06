@@ -14,6 +14,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import logger from '@src/utils/comcom/logger';
 import { scale, vScale } from '@src/lib';
 import { themes } from '@src/utils';
+import { Message } from 'react-native-gifted-chat';
 
 type Props = {
     onPress?: () => void;
@@ -34,6 +35,34 @@ const CodeOTPComponent = ({ onPress, loading }: Props, ref: any) => {
             otp: '',
         },
     });
+
+    const onSubmit = async (data: any) => {
+        const confirmCode = ref?.current?.getConfirm()._verificationId;
+        const { otp } = data;
+        try {
+            if (confirmCode && data && phone) {
+                const credential = auth.PhoneAuthProvider.credential(confirmCode, otp);
+                const res = await auth().signInWithCredential(credential);
+                if (res && res.user) {
+                    const firebaseToken = await auth().currentUser?.getIdToken();
+                    if (firebaseToken) {
+                        await AsyncStorage.setItem('accessToken', firebaseToken);
+                        toast.show({
+                            description: 'Xác nhận thành công',
+                        });
+
+                        logger.info('token', firebaseToken);
+                        // setIsLogin(true);
+                        // navigation.navigate(SCREENS.MAIN_STACK);
+                    }
+                }
+            }
+        } catch (error) {
+            toast.show({
+                description: 'Sai mã OTP',
+            });
+        }
+    };
 
     // const onSubmit = async (data: any) => {
     //     // const phone = ref?.current?.getPhone();
@@ -61,10 +90,6 @@ const CodeOTPComponent = ({ onPress, loading }: Props, ref: any) => {
     //         });
     //     }
     // };
-
-    function onSubmit() {
-        console.log('dsadas');
-    }
 
     // useEffect(() => {
     //     setPhone(ref?.current?.getPhone());

@@ -45,7 +45,7 @@ const MainAuthCom = () => {
                 <CodeOTP onPress={onNext} loading={loading} ref={phone} /> */}
                 <IntroScreen onPress={onNext} />
                 <PhoneScreen onPress={onNext} loading={loading} ref={phone} />
-                <OtpScreen onPress={onNext} loading={loading} />
+                <OtpScreen onPress={onNext} loading={loading} ref={phone} />
             </ScrollableTabView>
         </Box>
     );
