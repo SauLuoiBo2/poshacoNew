@@ -23,6 +23,7 @@ const AppContainer = () => {
                     <Root.Screen name={SCREENS.AUTH_STACK} component={AuthStack} />
                 )}
                 {/* <Root.Screen name={SCREENS.AUTH_STACK} component={AuthStack} /> */}
+               
             </Root.Navigator>
         </NavigationContainer>
     );
